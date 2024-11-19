@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Students List</title>
+		<style>
+			body{
+				font-family: Arial;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 60vh;
+				background-color: antiquewhite;
+			}
+			.container{
+				box-shadow: 2px 2px 10px rgb(99, 52, 52);
+				padding: 30px;
+				background-color: rgb(199, 204, 209);
+			}
+			.container h2{
+				text-align: center;
+			}
+			.container table{
+				margin-left: 10px;
+				text-align: center;
+				background-color: antiquewhite;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2>All Students List</h2>
+		
+			<table border="1">
+				<thead id="tbl">
+					<tr>
+						<th>Roll</th>
+						<th>Name</th>
+						<th>Branch</th>
+						<th>YOP</th>
+						<th>CGPA</th>
+					</tr>
+				</thead>
+				<tbody id="tbl">
+					<tr th:each = "st:${studentList}">
+						<td th:text = "${st.roll}"></td>
+						<td th:text = "${st.name}"></td>
+						<td th:text = "${st.branch}"></td>
+						<td th:text = "${st.yop}"></td>
+						<td th:text = "${st.cgpa}"></td>					
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
